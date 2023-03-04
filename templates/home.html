@@ -1,0 +1,608 @@
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <script type="text/javascript">
+      var m={{ messages|safe }};
+      for(var i=0;i<m.length;i++)
+      {
+        alert(m[i]);
+      }
+    </script>
+  {% endif %}
+{% endwith %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="static/css/style.css">
+
+</head>
+<body>
+    
+<header class="header">
+
+    <div id="menu-btn" class="fas fa-bars"></div>
+
+    <a href="#" class="logo"> <span>Bike</span>Rentzz </a>
+
+    <nav class="navbar">
+        <a href="#vehicles">vehicles</a>
+        <a href="#services">services</a>
+        <a href="#featured">featured</a>
+        <a href="#reviews">reviews</a>
+        <a href="#contact">contact</a>
+    </nav>
+
+    <div id="login-btn">
+        <button class="btn">{{ username }}</button>
+        <i class="far fa-user"></i>
+    </div>
+
+    <div class="login-btn">
+        <h1>
+            <a href="{{url_for('logout')}}">Logout</a><br>
+        </h1>
+    </div>
+
+
+</header> 
+
+<section class="home" id="home">
+
+    <h3 data-speed="-2" class="home-parallax">find The Bike You Desire</h3>
+
+    <img data-speed="5" class="home-parallax" src="static/image/home-img-bike.jpg" alt="" stlyes="height:1074px;width:400px;">
+
+    <a data-speed="7" href="{{url_for('details')}}" class="btn home-parallax">explore Bikes</a>
+
+</section>
+
+<section class="icons-container">
+
+    <div class="icons">
+        <i class="fas fa-home"></i>
+        <div class="content">
+            <h3>150+</h3>
+            <p>branches</p>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-car"></i>
+        <div class="content">
+            <h3>47770+</h3>
+            <p>Bike Rented </p>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-users"></i>
+        <div class="content">
+            <h3>320+</h3>
+            <p>happy clients</p>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-car"></i>
+        <div class="content">
+            <h3>1500+</h3>
+            <p>news Bikes</p>
+        </div>
+    </div>
+
+</section>
+
+<section class="vehicles" id="vehicles">
+
+    <h1 class="heading"> popular <span>vehicles</span> </h1>
+
+    <div class="swiper vehicles-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide box">
+                <img src="static/image/bike-1.jfif" alt="">
+                <div class="content">
+                    <h3>new model</h3>
+                    <div class="price"> <span>price : </span> Rs. 899/-  per day</div>
+                    <p>
+                        new
+                        <span class="fas fa-circle"></span> 2021
+                        <span class="fas fa-circle"></span> automatic
+                        <span class="fas fa-circle"></span> petrol
+                        <span class="fas fa-circle"></span> 183mph
+                    </p>
+                    <a href="{{url_for('reserve')}}" class="btn">check out</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="static/image/bike-2.webp" alt="">
+                <div class="content">
+                    <h3>new model</h3>
+                    <div class="price"> <span>price : </span>Rs. 1232/-  per day  </div>
+                    <p>
+                        new
+                        <span class="fas fa-circle"></span> 2021
+                        <span class="fas fa-circle"></span> automatic
+                        <span class="fas fa-circle"></span> petrol
+                        <span class="fas fa-circle"></span> 190mph
+                    </p>
+                    <a href="{{url_for('reserve')}}" class="btn">check out</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="static/image/bike-3.webp" alt="">
+                <div class="content">
+                    <h3>new model</h3>
+                    <div class="price"> <span>price : </span> Rs. 999/-  per day </div>
+                    <p>
+                        new
+                        <span class="fas fa-circle"></span> 2021
+                        <span class="fas fa-circle"></span> automatic
+                        <span class="fas fa-circle"></span> electric
+                        <span class="fas fa-circle"></span> 155mph
+                    </p>
+                    <a href="{{url_for('reserve')}}" class="btn">check out</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="static/image/bike-4.jpg" alt="">
+                <div class="content">
+                    <h3>new model</h3>
+                    <div class="price"> <span>price : </span> Rs. 1400/-  per day </div>
+                    <p>
+                        new
+                        <span class="fas fa-circle"></span> 2021
+                        <span class="fas fa-circle"></span> automatic
+                        <span class="fas fa-circle"></span> electric
+                        <span class="fas fa-circle"></span> 160mph
+                    </p>
+                    <a href="{{url_for('reserve')}}" class="btn">check out</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="static/image/bike-6.jfif" alt="">
+                <div class="content">
+                    <h3>new model</h3>
+                    <div class="price"> <span>price : </span> Rs. 2000/-  per day </div>
+                    <p>
+                        new
+                        <span class="fas fa-circle"></span> 2021
+                        <span class="fas fa-circle"></span> automatic
+                        <span class="fas fa-circle"></span> petrol
+                        <span class="fas fa-circle"></span> 250mph
+                    </p>
+                    <a href="{{url_for('reserve')}}" class="btn">check out</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="static/image/bike-7.webp" alt="">
+                <div class="content">
+                    <h3>new model</h3>
+                    <div class="price"> <span>price : </span> Rs. 1499/-  per day</div>
+                    <p>
+                        new
+                        <span class="fas fa-circle"></span> 2021
+                        <span class="fas fa-circle"></span> automatic
+                        <span class="fas fa-circle"></span> petrol
+                        <span class="fas fa-circle"></span> 200mph
+                    </p>
+                    <a href="{{url_for('reserve')}}" class="btn">check out</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+    </div>
+
+</section>
+
+<section class="services" id="services">
+
+    <h1 class="heading"> our <span>services</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <i class="fas fa-motorcycle"></i>
+            <h3>Bike Lending</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, nisi.</p>
+            <!-- <a href="#" class="btn"> read more</a> -->
+        </div>
+
+        <div class="box">
+            <i class="fas fa-solid fa-tricycle-adult"></i>
+            <h3>Tricycle for Senior citizens</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, nisi.</p>
+            <!-- <a href="#" class="btn"> read more</a> -->
+        </div>
+
+        <div class="box">
+            <i class="fas fa-car-crash"></i>
+            <h3>Rented Bike  insurance</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, nisi.</p>
+            <!-- <a href="#" class="btn"> read more</a> -->
+        </div>
+
+        <div class="box">
+            <i class="fas fa-car-battery"></i>
+            <h3>battery recharge</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, nisi.</p>
+            <!-- <a href="#" class="btn"> read more</a> -->
+        </div>
+
+        <div class="box">
+            <i class="fas fa-gas-pump"></i>
+            <h3>Oil filling</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, nisi.</p>
+            <!-- <a href="#" class="btn"> read more</a> -->
+        </div>
+
+        <div class="box">
+            <i class="fas fa-headset"></i>
+            <h3>24/7 support</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, nisi.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="featured" id="featured">
+
+    <h1 class="heading"> <span>featured</span> Bikes </h1>
+
+    <div class="swiper featured-slider">
+
+       <div class="swiper-wrapper">
+
+            <div class="swiper-slide box">
+                <img src="static/image/b-1.webp" alt="">
+                <div class="content">
+                    <h3>new model</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="price">Rs 3000/- per day</div>
+                    <a href="{{url_for('reserve')}}" class="btn">check out</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="static/image/b-2.jpg" alt="">
+                <div class="content">
+                    <h3>new model</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="price">Rs 2899/- per day</div>
+                    <a href="{{url_for('reserve')}}" class="btn">check out</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="static/image/b-3.png" alt="">
+                <div class="content">
+                    <h3>new model</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="price">Rs 3299/- per day</div>
+                    <a href="{{url_for('reserve')}}" class="btn">check out</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="static/image/b-4.webp" alt="">
+                <div class="content">
+                    <h3>new model</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="price">Rs 3500/- per day</div>
+                    <a href="{{url_for('reserve')}}" class="btn">check out</a>
+                </div>
+            </div>
+
+       </div>
+
+       <div class="swiper-pagination"></div>
+
+    </div>
+
+    <div class="swiper featured-slider">
+
+        <div class="swiper-wrapper">
+ 
+             <div class="swiper-slide box">
+                 <img src="static/image/b-5.png" alt="">
+                 <div class="content">
+                     <h3>new model</h3>
+                     <div class="stars">
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star-half-alt"></i>
+                     </div>
+                     <div class="price">Rs 3000/- per day</div>
+                     <a href="{{url_for('reserve')}}" class="btn">check out</a>
+                 </div>
+             </div>
+ 
+             <div class="swiper-slide box">
+                 <img src="static/image/b-6.jpg" alt="">
+                 <div class="content">
+                     <h3>new model</h3>
+                     <div class="stars">
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star-half-alt"></i>
+                     </div>
+                     <div class="price">Rs 3200/- per day</div>
+                     <a href="{{url_for('reserve')}}" class="btn">check out</a>
+                 </div>
+             </div>
+ 
+             <div class="swiper-slide box">
+                 <img src="static/image/b-7.jpg" alt="">
+                 <div class="content">
+                     <h3>new model</h3>
+                     <div class="stars">
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star-half-alt"></i>
+                     </div>
+                     <div class="price">Rs 4000/- per day</div>
+                     <a href="{{url_for('reserve')}}" class="btn">check out</a>
+                 </div>
+             </div>
+ 
+             <div class="swiper-slide box">
+                 <img src="static/image/b-8.jpg" alt="">
+                 <div class="content">
+                     <h3>new model</h3>
+                     <div class="stars">
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star-half-alt"></i>
+                     </div>
+                     <div class="price">Rs 3800/- per day</div>
+                     <a href="{{url_for('reserve')}}" class="btn">check out</a>
+                 </div>
+             </div>
+ 
+        </div>
+ 
+        <div class="swiper-pagination"></div>
+ 
+     </div>
+
+</section>
+
+<section class="reviews" id="reviews">
+
+    <h1 class="heading"> client's <span>review</span> </h1>
+
+    <div class="swiper review-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide box">
+                <img src="static/image/pic-1.webp" alt="">
+                <div class="content">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam incidunt quod praesentium iusto id autem possimus assumenda at ut saepe.</p>
+                    <h3>john deo</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="static/image/pic-2.png" alt="">
+                <div class="content">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam incidunt quod praesentium iusto id autem possimus assumenda at ut saepe.</p>
+                    <h3>john deo</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="static/image/pic-3.png" alt="">
+                <div class="content">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam incidunt quod praesentium iusto id autem possimus assumenda at ut saepe.</p>
+                    <h3>john deo</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="static/image/pic-4.png" alt="">
+                <div class="content">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam incidunt quod praesentium iusto id autem possimus assumenda at ut saepe.</p>
+                    <h3>john deo</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="static/image/pic-5.png" alt="">
+                <div class="content">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam incidunt quod praesentium iusto id autem possimus assumenda at ut saepe.</p>
+                    <h3>john deo</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="static/image/pic-6.png" alt="">
+                <div class="content">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam incidunt quod praesentium iusto id autem possimus assumenda at ut saepe.</p>
+                    <h3>john deo</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+    </div>
+
+</section>
+
+<section class="contact" id="contact">
+
+    <h1 class="heading"><span>Give</span>FeedBack</h1>
+
+    <div class="row">
+
+        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30153.788252261566!2d72.82321484621745!3d19.141690214227783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63aceef0c69%3A0x2aa80cf2287dfa3b!2sJogeshwari%20West%2C%20Mumbai%2C%20Maharashtra%20400047!5e0!3m2!1sen!2sin!4v1632137920043!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+
+        <form action="{{url_for('feedback')}}" method="post">
+            <h3>FeedBack</h3>
+            <input type="text" placeholder="Name" class="box" name = "name">
+            <input type="email" placeholder="Email" class="box" name = "email">
+            <input type="text" placeholder="City" class="box" name = "city">
+            <textarea placeholder="your message" class="box" name = "description" cols="30" rows="10"></textarea>
+            <input type="submit" value="send message" class="btn">
+        </form>
+
+    </div>
+
+</section>
+
+<section class="footer" id="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>our branches</h3>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> india </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> japan </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> france </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> russia </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> USA </a>
+        </div>
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="#"> <i class="fas fa-arrow-right"></i> home </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> vehicles </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> services </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> featured </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> reviews </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> contact </a>
+        </div>
+
+        <div class="box">
+            <h3>contact info</h3>
+            <a href="#"> <i class="fas fa-phone"></i> +123-456-7890 </a>
+            <a href="#"> <i class="fas fa-phone"></i> +111-222-3333 </a>
+            <a href="#"> <i class="fas fa-envelope"></i> shaikhanas@gmail.com </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> mumbai, india - 400104 </a>
+        </div>
+
+        <div class="box">
+            <h3>contact info</h3>
+            <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+            <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+            <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+            <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
+            <a href="#"> <i class="fab fa-pinterest"></i> pinterest </a>
+        </div>
+
+    </div>
+
+    
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<script src="static/js/home.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+CREATE DATABASE IF NOT EXISTS `BIKE` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `BIKE`;
+
+CREATE TABLE IF NOT EXISTS `USERS`(
+	`user_id` int(9) NOT NULL,
+  	`username` varchar(50) NOT NULL,
+	`email` varchar(50) NOT NULL,
+	`password` varchar(20) NOT NULL,
+	`FIRST_NAME` varchar(15) NOT  NULL,
+	`LAST_NAME` varchar(15) NOT NULL,
+	`contact` BIGINT NOT NULL,
+    PRIMARY KEY (`user_id`,`username`)
+);
+
+CREATE TABLE IF NOT EXISTS `VENDOR`(
+	`vendor_id` int(9) NOT NULL,
+  	`ven_name` varchar(50) NOT NULL,
+  	`contact` bigint NOT NULL,
+	`email` varchar(50) NOT NULL,
+	`password` varchar(20) NOT NULL,
+	`vendorname` varchar(20) NOT NULL,
+    PRIMARY KEY (`vendor_id`,`ven_name`)
+);
+
+CREATE TABLE IF NOT EXISTS `BIKE_DES`(
+	`vendor_id` varchar(9) NOT NULL,
+	`bike_id` int(9) NOT NULL,
+	`bike_name` varchar(50) NOT NULL,
+  	`type` varchar(100) NOT NULL,
+	`price` int NOT NULL,
+	`image` varchar(500) NOT NULL,
+    PRIMARY KEY (`bike_id`)
+);
+
+INSERT INTO BIKE_DES(vendor_id, bike_id, bike_name, type, price, image) VALUES (3, 101, 'YAMAHA T90', 'PETROL', 1000,"https://www.mixindia.com/wp-content/uploads/2019/11/02-2.jpg");
+INSERT INTO BIKE_DES(vendor_id, bike_id, bike_name, type, price, image) VALUES (1, 102, 'Harley H21V', 'ELECTRIC', 2000, "https://www.ondrive.in/wp-content/uploads/v-front-white-up.jpg");
+INSERT INTO BIKE_DES(vendor_id, bike_id, bike_name, type, price, image) VALUES (2, 103, 'Yamaha R15', 'PETROL', 2000,"https://imgd.aeplcdn.com/1280x720/n/cw/ec/103795/r15-right-front-three-quarter-19.png?isig=0&q=80");
+INSERT INTO BIKE_DES(vendor_id, bike_id, bike_name, type, price, image) VALUES (1, 104, 'Suzuki Gixxer', 'ELECTRIC', 2000,"https://imgd.aeplcdn.com/1280x720/bw/ec/40016/Suzuki-Gixxer-SF-2019-Side-157420.jpg?wm=0&q=80");
+INSERT INTO BIKE_DES(vendor_id, bike_id, bike_name, type, price, image) VALUES (3, 105, 'Quad', 'ELECTRIC', 1500,"https://th.bing.com/th/id/OIP.l2l6fPs6kJJiCLlXA65Z5gHaEo?pid=ImgDet&rs=1");
+INSERT INTO BIKE_DES(vendor_id, bike_id, bike_name, type, price, image) VALUES (1, 106, 'Jawa', 'PETROL', 2000,"https://th.bing.com/th/id/OIP.j8k0-gbQPvtv9pVFUq3VggHaD4?pid=ImgDet&rs=1");
+INSERT INTO BIKE_DES(vendor_id, bike_id, bike_name, type, price, image) VALUES (3, 107, 'Quantium', 'ELECTRIC', 3000,"https://th.bing.com/th/id/R.9ed3e67fc5b9550e9243e48517b0c1b8?rik=yuzwQMWpSCVJrw&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fNX9wGL7.jpg&ehk=kiEeOXEfwdRhL2l0w9wTKJdhtgwJUkGapngymOvGHKc%3d&risl=&pid=ImgRaw&r=0");
+INSERT INTO BIKE_DES(vendor_id, bike_id, bike_name, type, price, image) VALUES (2, 108, 'Tes2x15', 'ELECTRIC', 2020,"https://www.mixindia.com/wp-content/uploads/2019/11/02-2.jpg");
+INSERT INTO BIKE_DES(vendor_id, bike_id, bike_name, type, price, image) VALUES (1, 109, 'Bajaj V', 'PETROL', 2550,"https://www.ondrive.in/wp-content/uploads/v-front-white-up.jpg");
+
+CREATE TABLE IF NOT EXISTS `FEEDBACK`(
+	`feed_id` int(9) NOT NULL,
+	`username` varchar(50) NOT NULL,
+	`name` varchar(40) NOT NULL,
+	`email` varchar(50) NOT NULL,
+	`city` varchar(20) NOT NULL,
+  	`description` varchar(50) NOT NULL, 
+    PRIMARY KEY (`feed_id`)
+);
+
+CREATE TABLE IF NOT EXISTS `RESERVATION`(
+	`res_id` int(9) NOT NULL,
+	`username` varchar(50) NOT NULL,
+	`name` varchar(20) NOT NULL,
+	`email` varchar(30) NOT NULL,
+	`contact` bigint NOT NULL,
+	`location` varchar(40) NOT NULL,
+	`model_name` varchar(50) NOT NULL,
+	`lic_no` varchar(17) NOT NULL,
+	`req_date` date NOT NULL,
+    PRIMARY KEY (`res_id`)
+);

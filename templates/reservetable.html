@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Table Database</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='table.css')}}">
+</head>
+<nav class="navbar">
+    <a href="{{url_for('home')}}">Home</a>
+</nav>
+    <table border = 1>
+        <tr>
+            <th>RES_ID</th>
+            <th>USERNAME</th>
+            <th>NAME</th>
+            <th>EMAIL</th>
+            <th>CONTACT</th>
+            <th>LOCATION</th>
+            <th>MODEL_NAME</th>
+            <th>REQ_DATE</th>
+            <th>LICENCE_NUMBER</th>
+        </tr>
+        {% for user in userDetail %}
+        <tr>
+            <td> {{ user[0] }} </td>
+            <td> {{ user[1] }} </td>
+            <td> {{ user[2] }} </td>
+            <td> {{ user[3] }} </td>
+            <td> {{ user[4] }} </td>
+            <td> {{ user[5] }} </td>
+            <td> {{ user[6] }} </td>
+            <td> {{ user[7] }} </td>
+            <td> {{ user[8] }} </td>
+        </tr>
+        {% endfor %}
+    </table>
+</html>

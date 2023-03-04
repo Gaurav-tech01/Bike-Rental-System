@@ -1,0 +1,68 @@
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <script type="text/javascript">
+      var m={{ messages|safe }};
+      for(var i=0;i<m.length;i++)
+      {
+        alert(m[i]);
+      }
+    </script>
+  {% endif %}
+{% endwith %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/register.css">
+    <title>Register</title>
+    <script src="https://kit.fontawesome.com/bcba2be85f.js" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+
+    <div class="form_wrapper">
+        <div class="form_container">
+          <div class="title_container">
+            <h2> Registration Form</h2>
+          </div>
+          <div class="row clearfix">
+            <div class="">
+              <form action = "{{url_for('vendorregister')}}" method="POST">
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                    <input type=text name="venlogname" placeholder="venlogname" required />
+                  </div>
+                
+                  <div class="input_field"> <span><i aria-hidden="true" class="fa fa-duotone fa-mobile-button"></i></span>
+                    <input type=text name="mobileno" placeholder="Mobile Number" required />
+                  </div>
+                
+                  <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                  <input type="email" name="email" placeholder="Email" required />
+                </div>
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                  <input type="password" name="password" placeholder="Password" required />
+                </div>
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                    <input type="text" name="vendorname" placeholder="Vendor Name" required />
+                  </div>
+                
+                    <div class="input_field select_option">
+    
+                      <div class="select_arrow"></div>
+                    </div>
+      
+                <input class="button" type="submit" value="Register" />
+                <p> Have an account <a href="{{url_for('index')}}">Login</a> </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    
+</body>
+</html>
